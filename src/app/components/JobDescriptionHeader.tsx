@@ -5,6 +5,7 @@ import SecondaryButton from './SecondaryButton'
 import { MyContext } from './Context'
 import Image from 'next/image'
 import Link from 'next/link'
+import { JobDescriptionHeaderProps } from '@/app/type/type'
 
 
 function JobDescriptionHeader({ data }: JobDescriptionHeaderProps) {

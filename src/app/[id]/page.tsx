@@ -1,14 +1,20 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { MyContext } from "../components/Context";
 import JobDescriptionHeader from "../components/JobDescriptionHeader";
 import JobDescriptionInfo from "../components/JobDescriptionInfo";
 import JobDescriptionFooter from "../components/JobDescriptionFooter";
+import { JobPosting } from "@/app/type/type";
 export default function Page({ params }: { params: { id: string } }) {
     const contextValue = useContext(MyContext);
     const dataId = Number(params.id);
 
-    const filteredById: JobPosting | undefined = contextValue?.dataJson.filter((x) => x.id == dataId)[0]
+
+    const filteredById = useMemo(() => {
+        return contextValue?.dataJson.find((x: JobPosting) => x.id == dataId)
+    }, [contextValue?.dataJson, dataId])
+
+
     if (!filteredById) {
         return <div>Loading...</div>;
     }

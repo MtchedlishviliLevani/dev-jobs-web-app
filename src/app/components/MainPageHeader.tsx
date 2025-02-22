@@ -106,7 +106,7 @@ function Header() {
                                         fill="#6E8098"
                                         fillRule="nonzero"
                                     />
-                                </svg>{" "}
+                                </svg>
                             </div>
                             <PrimaryButton fn={search}>
                                 <svg

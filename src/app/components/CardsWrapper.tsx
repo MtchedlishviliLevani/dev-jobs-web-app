@@ -3,13 +3,14 @@ import React, { useContext } from "react";
 import Card from "./Card";
 import { MyContext } from "./Context";
 import Link from "next/link";
+import { JobPosting } from "@/app/type/type";
 
 
 function CardsWrapper() {
     const contextValue = useContext(MyContext)
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-x-3 lg:gap-x-6 xl:gap-x-12 gap-y-[49px] my-[20px]">
-            {contextValue?.dataJson.slice(0, contextValue?.cardsAmount).map((item) => (
+            {contextValue?.dataJson.slice(0, contextValue?.cardsAmount).map((item: JobPosting) => (
                 <Link key={item.id} href={`/${item.id}`} >
                     <Card
                         position={item.position}

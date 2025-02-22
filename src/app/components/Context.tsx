@@ -2,18 +2,7 @@
 import React, { ReactNode, createContext, useState, } from 'react'
 import { getTheme } from '../utils/theme'
 import data from "../../app/data/data.json"
-interface Context {
-    pageMode: boolean,
-    setPageMode: React.Dispatch<React.SetStateAction<boolean>>;
-    dataJson: typeof data;
-    setDataJson: React.Dispatch<React.SetStateAction<typeof data>>;
-    cardsAmount: number;
-    setCardsAmount: React.Dispatch<React.SetStateAction<number>>;
-    isFilterActive: boolean;
-    setIsFilterActive: React.Dispatch<React.SetStateAction<boolean>>
-
-
-}
+import type { Context } from '@/app/type/type'
 export const MyContext = createContext<Context | undefined>(undefined)
 
 function Context({ children }: { children: ReactNode }) {

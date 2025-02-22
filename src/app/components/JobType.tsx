@@ -2,12 +2,10 @@
 import React, { useContext } from 'react'
 import CheckBox from './CheckBox'
 import { MyContext } from './Context'
+import type { CheckBoxProps } from '@/app/type/type'
 
-interface Props {
-    isChecked: boolean;
-    setIsChecked: React.Dispatch<React.SetStateAction<boolean>>
-}
-function JobType({ isChecked, setIsChecked }: Props) {
+
+function JobType({ isChecked, setIsChecked }: CheckBoxProps) {
     const contextValue = useContext(MyContext)
     return (
         <div className='flex gap-[4rem]'>

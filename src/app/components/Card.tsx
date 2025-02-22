@@ -2,18 +2,10 @@
 import Image from 'next/image'
 import React, { useContext } from 'react'
 import { MyContext } from './Context'
+import { CardProps } from '@/app/type/type'
 
-interface Props {
-    position: string
-    location: string
-    company: string
-    postedAt: string
-    contract: string
-    logo: string
-    logoBackground: string
-}
 
-function Card({ position, location, company, postedAt, contract, logo, logoBackground }: Props) {
+function Card({ position, location, company, postedAt, contract, logo, logoBackground }: CardProps) {
     const contextValue = useContext(MyContext)
     return (
         <div className={`${contextValue?.pageMode ? "bg-lightMode-cardBgColor" : "bg-darkMode-cardBgColor"} pt-[49px] pl-[32px] pb-[36px] rounded-[6px] relative`}>

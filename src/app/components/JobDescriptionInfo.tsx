@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import Context, { MyContext } from "./Context";
 import PrimaryButton from "./PrimaryButton";
 import { useRouter } from "next/navigation";
+import { JobDescriptionHeaderProps } from "@/app/type/type";
 export default function JobDescriptionInfo({
     data,
 }: JobDescriptionHeaderProps) {
